@@ -1,0 +1,583 @@
+@font-face {
+  font-family: "font-sans";
+  src: url("../font/IRANSansWeb_Bold.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("../font/IRANSansWeb_Bold.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../font/IRANSansWeb_Bold.woff") format("woff"),
+    /* Pretty Modern Browsers */ url("../font/IRANSans_Bold.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: "fn";
+  src: url("../font/IRANSans(FaNum).ttf");
+}
+
+body,
+html {
+  font-size: 9pt !important;
+  font-family: font-sans !important;
+  max-width: 1920px;
+  min-width: 992px;
+  width: 100%;
+  height: auto;
+  direction: rtl;
+}
+
+#root {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  max-width: 1920px;
+  min-width: 300px;
+  margin: 0 auto;
+  right: 0;
+  left: 0;
+  top: 0;
+  background: #fff;
+  min-height: 100vh;
+  z-index: -10;
+  font-size: 9pt !important;
+  direction: rtl;
+}
+
+header,
+footer {
+  max-width: 1920px;
+  min-width: 300px;
+}
+.fn {
+  font-family: fn !important;
+}
+$bc: #4f4e5c;
+$tc: #c6c6c6;
+$w: #fff;
+a,
+a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none;
+}
+.trbl {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.side-menu {
+  &:after{
+    content: '';
+    display: block;
+    width: 130px;
+    height: 30px;
+    background: url(../img/border2.png);
+    background-size: 100% 100%;
+    background-position: 0 0;
+    @extend .trbl;
+    position: relative;
+    top: -10px;
+  }
+  width: 250px;
+  background: #ddd;
+  > div:first-child {
+   // height: 230px;
+    position: relative;
+    > div:first-child {
+      width: 130px;
+      height: 130px;
+      background: url(../img/img-border.png);
+      background-size: 100% 100%;
+      background-position: 0 0;
+      border-radius: 100%;
+      @extend .trbl;
+      position: relative;
+      > img {
+        width: 100px;
+         height: 100px;
+        border-radius: 100%;
+        @extend .trbl;
+        position: absolute;
+      }
+    }
+    > div:nth-child(3){
+      //height: 70px;
+      >div>div> div:first-child {
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          border-radius: 100%;
+          position: relative;
+          > svg {
+            width: 60%;
+            height: 60%;
+            position: absolute;
+            @extend .trbl;
+            fill: white;
+          }
+        }
+      }
+      >div> div:nth-child(1) {
+        a {
+          background-color: #ff00b9;
+        }
+      }
+      >div> div:nth-child(2) {
+        a {
+          background-color: #209b1a;
+        }
+      }
+      >div> div:nth-child(3) {
+        a {
+          background-color: #ff0042;
+        }
+      }
+      >div> div:nth-child(4) {
+        a {
+          background-color: #0051ff;
+        }
+      }
+    }
+  }
+  .nav > a {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+      
+    &:not(:last-child):after {
+      content: '';
+      display: block;
+      width: 110%;
+      height: 1px;
+      background-color: #eee;
+      top: 19px;
+      left: 10px;
+      position: relative;
+    }
+    &.nav-link.active {
+      background: linear-gradient(to right, #ddd 0%, #fca120 80%) !important;
+    }
+    svg{
+      width: 20px;
+      height: 20px;
+      margin-left: 8px;
+      fill: #343a40;
+      position: relative;
+    bottom: 2px;
+    }
+    &.active{
+      color: white!important;
+      svg{
+        fill: white;
+      }
+    }
+    &:not(.active):hover{
+      svg{
+        fill: #121416;
+      }
+    }
+  }
+  >div:last-child{
+    img{
+      width: 100px;
+      height: 100px;
+      @extend .trbl;
+    }
+  }
+}
+
+/*clock*/
+
+// ---- VARIABLES
+
+$clockSize: 200px;
+$clockPadding: $clockSize / 14.4;
+$clockBackground: #f7f7f7;
+$innerBorderWidth: $clockSize / 72;
+$innerBorderColor: #181818;
+$secondHandBackgroundColor: #ec231e;
+
+// ---- CLOCK
+.date{
+  width: 200px;
+  padding: $clockPadding;
+  background-color: $clockBackground;
+  border-radius: $clockSize / 5;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+  @extend .trbl;
+  position: relative;
+}
+.clock {
+  width: $clockSize;
+  height: $clockSize;
+  padding: $clockPadding;
+  background-color: $clockBackground;
+  border-radius: $clockSize / 5;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+  @extend .trbl;
+  .inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border: $innerBorderWidth solid $innerBorderColor;
+    border-radius: 100%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.75) inset;
+
+    .hand {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: $clockSize / 50;
+      background-color: #181818;
+
+      &.hour {
+        height: $clockSize / 4;
+        margin-top: -($clockSize / 13.2);
+        transform: rotate(0deg) translate(-50%, -50%);
+        transform-origin: 0 ($clockSize / 13.2);
+      }
+
+      &.minute {
+        height: $clockSize / 3;
+        margin-top: -($clockSize / 13.2);
+        transform: rotate(0deg) translate(-50%, -50%);
+        transform-origin: 0 ($clockSize / 13.2);
+      }
+
+      &.second {
+        width: $clockSize / 185;
+        height: $clockSize / 3;
+        background-color: $secondHandBackgroundColor;
+        margin-top: -($clockSize / 10);
+        box-shadow: (-4px) -6px 0 0 rgba(0, 0, 0, 0.15);
+        transform: rotate(0deg) translate(-50%, -50%);
+        transform-origin: 0 ($clockSize / 10);
+
+        &:before,
+        &:after {
+          content: "";
+          display: inherit;
+          position: inherit;
+          left: inherit;
+          background-color: inherit;
+          border-radius: 100%;
+          transform: translate(-50%, -50%);
+        }
+
+        &:before {
+          top: $clockSize / 3.8;
+          width: $clockSize / 20;
+          height: $clockSize / 20;
+          box-shadow: (-2px) -2px 2px 0 rgba(0, 0, 0, 0.15);
+        }
+
+        &:after {
+          top: $clockSize / 18;
+          width: $clockSize / 36;
+          height: $clockSize / 36;
+          box-shadow: (-4px) -6px 2px 0 rgba(0, 0, 0, 0.15);
+        }
+      }
+    }
+
+    .graduations {
+      .graduation {
+        display: block;
+        position: absolute;
+        top: $innerBorderWidth * 1.5;
+        left: 50%;
+        width: $clockSize / 185;
+        height: $clockSize / 40;
+        background-color: #181818;
+        transform: rotate(0deg) translateX(-50%);
+        transform-origin: 0 (($clockSize - $clockPadding * 2) / 2 - $innerBorderWidth * 3);
+
+        &:nth-child(5n-4) {
+          width: $clockSize / 90;
+          height: $clockSize / 18;
+        }
+
+        @for $i from 1 through 60 {
+          &:nth-child(#{$i}) {
+            transform: rotate(#{6 * $i - 5}deg) translateX(-50%);
+          }
+        }
+      }
+    }
+  }
+}
+
+/*clock*/
+
+$primary: #11998e;
+$secondary: #38ef7d;
+$white: #333;
+$gray: #9b9b9b;
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+}
+
+.form__field , .multiselect-input{
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid $gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color: $white;
+  padding: 7px 10px 7px 5px;
+  background: rgb(249, 249, 249);
+  transition: border-color 0.2s;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+
+  &::placeholder {
+    color: transparent;
+  }
+   ~span{   
+     position: absolute;
+    left: 40px;
+    top: 18px;
+    font-size: 18px;
+    opacity: 0;
+  }
+  &:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+    right: 10px;
+  }
+  &:not(:placeholder-shown) ~ span {
+    opacity: 1;
+  }
+}
+
+.form__label {
+  position: absolute;
+  top: -5px;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: $gray;
+
+}
+
+.form__field:focus , .multiselect-input:focus{
+  ~ .form__label {
+    position: absolute;
+    top: -5px;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: $primary;
+    font-weight:700;    
+  }
+  padding-bottom: 6px;  
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, $primary,$secondary);
+  border-image-slice: 1;
+
+  &::placeholder {
+    color: #333;
+  }
+  ~span{
+    opacity: 1;
+  }
+}
+/* reset input */
+.form__field , .multiselect-input{
+  &:required,&:invalid { box-shadow:none; }
+}
+
+
+.main{
+  width: 100%;
+  /*max-width:65vw;*/
+  background: #eee;
+  .head{
+    display: block;
+    width: 50%;
+    height: 2px;
+    background-color: #aaa;
+    text-align: center;
+    position: relative;
+    @extend .trbl;
+    h5{
+      position: absolute;
+      top: -8px;
+      background-color: #eee;
+      width: 120px;
+      @extend .trbl;
+    }
+  }
+}
+
+.phone {
+  background: white;
+  height: 350px;
+  max-width: 360px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin: auto;
+}
+.card1 {
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  transition: transform 300ms;
+  width: 100%;
+}
+.card1:not(:first-child){
+  transform: translateX(100%);
+}
+
+.card__contents {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.card1:nth-child(1) .card__contents {
+  background: #fff;
+}
+.card1:nth-child(2) .card__contents {
+  background: #ffffff;
+ // -webkit-clip-path: polygon(10% 0%, 10% 20%, 0% 20%, 0% 100%, 100% 100%, 100% 0%);
+ // clip-path: polygon(10% 0%, 10% 20%, 0% 20%, 0% 100%, 100% 100%, 100% 0%);
+}
+.card1:nth-child(3) .card__contents {
+  background: #ffffff;
+ // -webkit-clip-path: polygon(10% 0%, 10% 40%, 0% 40%, 0% 100%, 100% 100%, 100% 0%);
+ // clip-path: polygon(10% 0%, 10% 40%, 0% 40%, 0% 100%, 100% 100%, 100% 0%);
+}
+.card1:nth-child(4) .card__contents {
+  background: #ffffff;
+//  -webkit-clip-path: polygon(10% 0%, 10% 60%, 0% 60%, 0% 100%, 100% 100%, 100% 0%);
+//  clip-path: polygon(10% 0%, 10% 60%, 0% 60%, 0% 100%, 100% 100%, 100% 0%);
+}
+.card1:nth-child(5) .card__contents {
+  background: #ffffff;
+//  -webkit-clip-path: polygon(10% 0%, 10% 80%, 0% 80%, 0% 100%, 100% 100%, 100% 0%);
+//  clip-path: polygon(10% 0%, 10% 80%, 0% 80%, 0% 100%, 100% 100%, 100% 0%);
+}
+/*.card1:nth-child(6) .card__contents {
+  background: #E6C9F9;
+  -webkit-clip-path: polygon(10% 0%, 10% 80%, 0% 80%, 0% 100%, 100% 100%, 100% 0%);
+  clip-path: polygon(10% 0%, 10% 80%, 0% 80%, 0% 100%, 100% 100%, 100% 0%);
+}*/
+.card__title {
+  font-weight: 800;
+  font-size: 2em;
+  margin-top: 20px;
+}
+.card__body {
+  margin-top: 20px;
+  max-width: 200px;
+}
+.card__input {
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid black;
+  font-size: 1em;
+  outline: none !important;
+}
+.card__input:focus {
+  border-width: 4px;
+}
+.card__radio {
+  margin-right: 10px;
+  vertical-align: baseline;
+}
+.card__check {
+  margin-right: 10px;
+}
+.card__next {
+  -webkit-tap-highlight-color: transparent;
+  bottom: 20px;
+  cursor: pointer;
+  margin-top: 50px;
+  position: absolute;
+  right: 20px;
+  user-select: none;
+}
+.card__shadow {
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 14%;
+  left: 0px;
+}
+.card__shadow-inner {
+  box-shadow: inset 0 0 6px rgba(50,50,50,.3);
+  height: calc(100% + 15px);
+  left: -15px;
+  position: relative;
+  top: -15px;
+  width: calc(100% + 15px);
+}
+.card1:nth-child(1) .card__shadow {
+  height: 0;
+}
+.card1:nth-child(2) .card__shadow {
+  //height: 20%;
+}
+.card1:nth-child(3) .card__shadow {
+  //height: 40%;
+}
+.card1:nth-child(4) .card__shadow {
+ // height: 60%;
+}
+.card1:nth-child(5) .card__shadow {
+ // height: 80%;
+}
+/*.card1:nth-child(6) .card__shadow {
+  height: 80%;
+}*/
+.card__index {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+ // height: 10%;
+  justify-content: center;
+  position: absolute;
+  text-align: center;
+  width: 10%;
+  z-index: 1;
+  left: 0;
+}
+.card1:nth-child(1) .card__index {
+  top: 0;
+}
+.card1:nth-child(2) .card__index {
+ // top: 20%;
+}
+.card1:nth-child(3) .card__index {
+ // top: 40%;
+}
+.card1:nth-child(4) .card__index {
+  //top: 60%;
+}
+.card1:nth-child(5) .card__index {
+ // top: 80%;
+}
+/*.card1:nth-child(6) .card__index {
+  top: 80%;
+}*/
+
+#tab2{
+  svg{
+    width: 30px;
+    height: 30px;
+  }
+}

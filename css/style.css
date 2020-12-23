@@ -1,0 +1,546 @@
+@font-face {
+  font-family: "font-sans";
+  src: url("../font/IRANSansWeb_Bold.eot?#iefix") format("embedded-opentype"), url("../font/IRANSansWeb_Bold.woff2") format("woff2"), url("../font/IRANSansWeb_Bold.woff") format("woff"), url("../font/IRANSans_Bold.ttf") format("truetype");
+  /* Safari, Android, iOS */ }
+@font-face {
+  font-family: "fn";
+  src: url("../font/IRANSans(FaNum).ttf"); }
+body,
+html {
+  font-size: 9pt !important;
+  font-family: font-sans !important;
+  max-width: 1920px;
+  min-width: 992px;
+  width: 100%;
+  height: auto;
+  direction: rtl; }
+
+#root {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  max-width: 1920px;
+  min-width: 300px;
+  margin: 0 auto;
+  right: 0;
+  left: 0;
+  top: 0;
+  background: #fff;
+  min-height: 100vh;
+  z-index: -10;
+  font-size: 9pt !important;
+  direction: rtl; }
+
+header,
+footer {
+  max-width: 1920px;
+  min-width: 300px; }
+
+.fn {
+  font-family: fn !important; }
+
+a,
+a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none; }
+
+.trbl, .side-menu:after, .side-menu > div:first-child > div:first-child, .side-menu > div:first-child > div:first-child > img, .side-menu > div:first-child > div:nth-child(3) > div > div > div:first-child a > svg, .side-menu > div:last-child img, .date, .clock, .main .head, .main .head h5 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto; }
+
+.side-menu {
+  width: 250px;
+  background: #ddd; }
+  .side-menu:after {
+    content: '';
+    display: block;
+    width: 130px;
+    height: 30px;
+    background: url(../img/border2.png);
+    background-size: 100% 100%;
+    background-position: 0 0;
+    position: relative;
+    top: -10px; }
+  .side-menu > div:first-child {
+    position: relative; }
+    .side-menu > div:first-child > div:first-child {
+      width: 130px;
+      height: 130px;
+      background: url(../img/img-border.png);
+      background-size: 100% 100%;
+      background-position: 0 0;
+      border-radius: 100%;
+      position: relative; }
+      .side-menu > div:first-child > div:first-child > img {
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        position: absolute; }
+    .side-menu > div:first-child > div:nth-child(3) > div > div > div:first-child {
+      width: 40px;
+      height: 40px;
+      border-radius: 100%; }
+      .side-menu > div:first-child > div:nth-child(3) > div > div > div:first-child a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        position: relative; }
+        .side-menu > div:first-child > div:nth-child(3) > div > div > div:first-child a > svg {
+          width: 60%;
+          height: 60%;
+          position: absolute;
+          fill: white; }
+    .side-menu > div:first-child > div:nth-child(3) > div > div:nth-child(1) a {
+      background-color: #ff00b9; }
+    .side-menu > div:first-child > div:nth-child(3) > div > div:nth-child(2) a {
+      background-color: #209b1a; }
+    .side-menu > div:first-child > div:nth-child(3) > div > div:nth-child(3) a {
+      background-color: #ff0042; }
+    .side-menu > div:first-child > div:nth-child(3) > div > div:nth-child(4) a {
+      background-color: #0051ff; }
+  .side-menu .nav > a {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px; }
+    .side-menu .nav > a:not(:last-child):after {
+      content: '';
+      display: block;
+      width: 110%;
+      height: 1px;
+      background-color: #eee;
+      top: 19px;
+      left: 10px;
+      position: relative; }
+    .side-menu .nav > a.nav-link.active {
+      background: linear-gradient(to right, #ddd 0%, #fca120 80%) !important; }
+    .side-menu .nav > a svg {
+      width: 20px;
+      height: 20px;
+      margin-left: 8px;
+      fill: #343a40;
+      position: relative;
+      bottom: 2px; }
+    .side-menu .nav > a.active {
+      color: white !important; }
+      .side-menu .nav > a.active svg {
+        fill: white; }
+    .side-menu .nav > a:not(.active):hover svg {
+      fill: #121416; }
+  .side-menu > div:last-child img {
+    width: 100px;
+    height: 100px; }
+
+/*clock*/
+.date {
+  width: 200px;
+  padding: 13.8888888889px;
+  background-color: #f7f7f7;
+  border-radius: 40px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+  position: relative; }
+
+.clock {
+  width: 200px;
+  height: 200px;
+  padding: 13.8888888889px;
+  background-color: #f7f7f7;
+  border-radius: 40px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15); }
+  .clock .inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border: 2.7777777778px solid #181818;
+    border-radius: 100%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.75) inset; }
+    .clock .inner .hand {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 4px;
+      background-color: #181818; }
+      .clock .inner .hand.hour {
+        height: 50px;
+        margin-top: -15.1515151515px;
+        transform: rotate(0deg) translate(-50%, -50%);
+        transform-origin: 0 15.1515151515px; }
+      .clock .inner .hand.minute {
+        height: 66.6666666667px;
+        margin-top: -15.1515151515px;
+        transform: rotate(0deg) translate(-50%, -50%);
+        transform-origin: 0 15.1515151515px; }
+      .clock .inner .hand.second {
+        width: 1.0810810811px;
+        height: 66.6666666667px;
+        background-color: #ec231e;
+        margin-top: -20px;
+        box-shadow: -4px -6px 0 0 rgba(0, 0, 0, 0.15);
+        transform: rotate(0deg) translate(-50%, -50%);
+        transform-origin: 0 20px; }
+        .clock .inner .hand.second:before, .clock .inner .hand.second:after {
+          content: "";
+          display: inherit;
+          position: inherit;
+          left: inherit;
+          background-color: inherit;
+          border-radius: 100%;
+          transform: translate(-50%, -50%); }
+        .clock .inner .hand.second:before {
+          top: 52.6315789474px;
+          width: 10px;
+          height: 10px;
+          box-shadow: -2px -2px 2px 0 rgba(0, 0, 0, 0.15); }
+        .clock .inner .hand.second:after {
+          top: 11.1111111111px;
+          width: 5.5555555556px;
+          height: 5.5555555556px;
+          box-shadow: -4px -6px 2px 0 rgba(0, 0, 0, 0.15); }
+    .clock .inner .graduations .graduation {
+      display: block;
+      position: absolute;
+      top: 4.1666666667px;
+      left: 50%;
+      width: 1.0810810811px;
+      height: 5px;
+      background-color: #181818;
+      transform: rotate(0deg) translateX(-50%);
+      transform-origin: 0 77.7777777778px; }
+      .clock .inner .graduations .graduation:nth-child(5n-4) {
+        width: 2.2222222222px;
+        height: 11.1111111111px; }
+      .clock .inner .graduations .graduation:nth-child(1) {
+        transform: rotate(1deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(2) {
+        transform: rotate(7deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(3) {
+        transform: rotate(13deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(4) {
+        transform: rotate(19deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(5) {
+        transform: rotate(25deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(6) {
+        transform: rotate(31deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(7) {
+        transform: rotate(37deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(8) {
+        transform: rotate(43deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(9) {
+        transform: rotate(49deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(10) {
+        transform: rotate(55deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(11) {
+        transform: rotate(61deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(12) {
+        transform: rotate(67deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(13) {
+        transform: rotate(73deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(14) {
+        transform: rotate(79deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(15) {
+        transform: rotate(85deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(16) {
+        transform: rotate(91deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(17) {
+        transform: rotate(97deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(18) {
+        transform: rotate(103deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(19) {
+        transform: rotate(109deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(20) {
+        transform: rotate(115deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(21) {
+        transform: rotate(121deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(22) {
+        transform: rotate(127deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(23) {
+        transform: rotate(133deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(24) {
+        transform: rotate(139deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(25) {
+        transform: rotate(145deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(26) {
+        transform: rotate(151deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(27) {
+        transform: rotate(157deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(28) {
+        transform: rotate(163deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(29) {
+        transform: rotate(169deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(30) {
+        transform: rotate(175deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(31) {
+        transform: rotate(181deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(32) {
+        transform: rotate(187deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(33) {
+        transform: rotate(193deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(34) {
+        transform: rotate(199deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(35) {
+        transform: rotate(205deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(36) {
+        transform: rotate(211deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(37) {
+        transform: rotate(217deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(38) {
+        transform: rotate(223deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(39) {
+        transform: rotate(229deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(40) {
+        transform: rotate(235deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(41) {
+        transform: rotate(241deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(42) {
+        transform: rotate(247deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(43) {
+        transform: rotate(253deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(44) {
+        transform: rotate(259deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(45) {
+        transform: rotate(265deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(46) {
+        transform: rotate(271deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(47) {
+        transform: rotate(277deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(48) {
+        transform: rotate(283deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(49) {
+        transform: rotate(289deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(50) {
+        transform: rotate(295deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(51) {
+        transform: rotate(301deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(52) {
+        transform: rotate(307deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(53) {
+        transform: rotate(313deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(54) {
+        transform: rotate(319deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(55) {
+        transform: rotate(325deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(56) {
+        transform: rotate(331deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(57) {
+        transform: rotate(337deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(58) {
+        transform: rotate(343deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(59) {
+        transform: rotate(349deg) translateX(-50%); }
+      .clock .inner .graduations .graduation:nth-child(60) {
+        transform: rotate(355deg) translateX(-50%); }
+
+/*clock*/
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px; }
+
+.form__field, .multiselect-input {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #333;
+  padding: 7px 10px 7px 5px;
+  background: #f9f9f9;
+  transition: border-color 0.2s;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; }
+  .form__field::placeholder, .multiselect-input::placeholder {
+    color: transparent; }
+  .form__field ~ span, .multiselect-input ~ span {
+    position: absolute;
+    left: 40px;
+    top: 18px;
+    font-size: 18px;
+    opacity: 0; }
+  .form__field:placeholder-shown ~ .form__label, .multiselect-input:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+    right: 10px; }
+  .form__field:not(:placeholder-shown) ~ span, .multiselect-input:not(:placeholder-shown) ~ span {
+    opacity: 1; }
+
+.form__label {
+  position: absolute;
+  top: -5px;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b; }
+
+.form__field:focus, .multiselect-input:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1; }
+  .form__field:focus ~ .form__label, .multiselect-input:focus ~ .form__label {
+    position: absolute;
+    top: -5px;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #11998e;
+    font-weight: 700; }
+  .form__field:focus::placeholder, .multiselect-input:focus::placeholder {
+    color: #333; }
+  .form__field:focus ~ span, .multiselect-input:focus ~ span {
+    opacity: 1; }
+
+/* reset input */
+.form__field:required, .form__field:invalid, .multiselect-input:required, .multiselect-input:invalid {
+  box-shadow: none; }
+
+.main {
+  width: 100%;
+  /*max-width:65vw;*/
+  background: #eee; }
+  .main .head {
+    display: block;
+    width: 50%;
+    height: 2px;
+    background-color: #aaa;
+    text-align: center;
+    position: relative; }
+    .main .head h5 {
+      position: absolute;
+      top: -8px;
+      background-color: #eee;
+      width: 120px; }
+
+.phone {
+  background: white;
+  height: 350px;
+  max-width: 360px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin: auto; }
+
+.card1 {
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  transition: transform 300ms;
+  width: 100%; }
+
+.card1:not(:first-child) {
+  transform: translateX(100%); }
+
+.card__contents {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%; }
+
+.card1:nth-child(1) .card__contents {
+  background: #fff; }
+
+.card1:nth-child(2) .card__contents {
+  background: #ffffff; }
+
+.card1:nth-child(3) .card__contents {
+  background: #ffffff; }
+
+.card1:nth-child(4) .card__contents {
+  background: #ffffff; }
+
+.card1:nth-child(5) .card__contents {
+  background: #ffffff; }
+
+/*.card1:nth-child(6) .card__contents {
+  background: #E6C9F9;
+  -webkit-clip-path: polygon(10% 0%, 10% 80%, 0% 80%, 0% 100%, 100% 100%, 100% 0%);
+  clip-path: polygon(10% 0%, 10% 80%, 0% 80%, 0% 100%, 100% 100%, 100% 0%);
+}*/
+.card__title {
+  font-weight: 800;
+  font-size: 2em;
+  margin-top: 20px; }
+
+.card__body {
+  margin-top: 20px;
+  max-width: 200px; }
+
+.card__input {
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid black;
+  font-size: 1em;
+  outline: none !important; }
+
+.card__input:focus {
+  border-width: 4px; }
+
+.card__radio {
+  margin-right: 10px;
+  vertical-align: baseline; }
+
+.card__check {
+  margin-right: 10px; }
+
+.card__next {
+  -webkit-tap-highlight-color: transparent;
+  bottom: 20px;
+  cursor: pointer;
+  margin-top: 50px;
+  position: absolute;
+  right: 20px;
+  user-select: none; }
+
+.card__shadow {
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 14%;
+  left: 0px; }
+
+.card__shadow-inner {
+  box-shadow: inset 0 0 6px rgba(50, 50, 50, 0.3);
+  height: calc(100% + 15px);
+  left: -15px;
+  position: relative;
+  top: -15px;
+  width: calc(100% + 15px); }
+
+.card1:nth-child(1) .card__shadow {
+  height: 0; }
+
+/*.card1:nth-child(6) .card__shadow {
+  height: 80%;
+}*/
+.card__index {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  text-align: center;
+  width: 10%;
+  z-index: 1;
+  left: 0; }
+
+.card1:nth-child(1) .card__index {
+  top: 0; }
+
+/*.card1:nth-child(6) .card__index {
+  top: 80%;
+}*/
+#tab2 svg {
+  width: 30px;
+  height: 30px; }
+
+/*# sourceMappingURL=style.css.map */
